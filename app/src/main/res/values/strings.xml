@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Mengenal Hewan</string>
+    <string name="deskripsi_mamalia">Hewan Menyusui (Mammalia) yaitu hewan yang memiliki kelenjar susu (betina) yang berfungsi untuk menghasilkan susu sebagai sumber makanan anaknya. Hewan Mammalia pada umumnya adalah hewan yang berdarah panas dan bereproduksi secara kawin. Hewan Menyusui atau mammalia ini ada yang hidup di darat dan ada juga hidup di air. Contoh Hewan Mammalia yang hidup di darat seperti Sapi, Domba, Monyet, Rusa, Kuda dan Gajah. Sedangkan Hewan Mammalia yang habitatnya di air seperti Paus, Lumba-lumba dan Duyung.</string>
+    <string name="deskripsi_aves">Burung (Aves) yaitu Hewan yang bisa terbang, Hewan Aves atau Burung ini memiliki bulu yang menutupi tubuhnya dengan alat gerak berupa kaki dan sayap. Meskipun Aves sering disebut sebagai hewan yang bisa terbang, ada beberapa jenis hewan yang tergolong dalam Aves tetapi tidak bisa terbang seperti Ayam, Bebek, Angsa dan Kalkun.</string>
+    <string name="deskripsi_reptil">Reptil (Reptilia), adalah hewan melata yang berdarah dingin dan memiliki sisik yang menutup tubuhnya. Contoh Hewan Reptil adalah buaya, kadal dan ular.</string>
+    <string name="deskripsi_amfibi">Amfibi (Amphibia), yaitu Hewan yang dapat hidup di dua alam (darat dan air), berdarah dingin (tidak dapat mengatur suhu badan sendiri) dan bernafas dengan paru-paru. Contoh Hewan Amfibi seperti Katak, Salamander dan kadal air.</string>
+    <string name="insect">Serangga (disebut pula insecta, dibaca "insekta", berasal dari bahasa Latin insectum, sebuah kata serapan dari bahasa Yunani ἔντομον [éntomon], "terpotong menjadi beberapa bagian") adalah salah satu kelas avertebrata di dalam filum arthropoda yang memiliki exoskeleton berkitin</string>
+    <string name="app_first_run">first_run</string>
+</resources>
