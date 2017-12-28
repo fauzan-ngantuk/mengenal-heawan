@@ -2,16 +2,22 @@ package com.fakuzan.mengenalhewan;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DetailActivity extends AppCompatActivity {
+import com.fakuzan.mengenalhewan.interfaces.Playable;
+
+public class DetailActivity extends AppCompatActivity implements Playable {
 
     ImageView imageView;
     TextView TvDeskripsiKelas;
@@ -43,35 +49,41 @@ public class DetailActivity extends AppCompatActivity {
             deskripsiHewan = (String) bundle.get(HewanActivity.DESKRIPSI_HEWAN).toString();
         }
 
-        final String suaraHewan = gambarHewan;
-
-        getSupportActionBar().setTitle(namaHewan);
-        imageView.setImageDrawable(getDrawable(this.getResources().getIdentifier(gambarHewan, "drawable", this.getPackageName())));
-        TvDeskripsiKelas.setText(deskripsiKelas);
-        TvDeskripsiHewan.setText(deskripsiHewan);
+        String suaraHewan = gambarHewan;
+        final int rawId = getApplicationContext().getResources().getIdentifier(suaraHewan, "raw", getApplicationContext().getPackageName());
 
         BtnCekSuara.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Context context = getApplicationContext();
-                int rawId = context.getResources().getIdentifier(suaraHewan, "raw", context.getPackageName());
-                playSound(context, rawId);
+                play(getApplicationContext(), rawId);
             }
         });
 
+        if (rawId==0){
+            BtnCekSuara.setEnabled(false);
+            BtnCekSuara.setBackgroundColor(Color.GRAY);
+        }
+
+        getSupportActionBar().setTitle(namaHewan);
+
+        imageView.setImageDrawable(getDrawable(this.getResources().getIdentifier(gambarHewan, "drawable", this.getPackageName())));
+        TvDeskripsiKelas.setText(deskripsiKelas);
+        TvDeskripsiHewan.setText(deskripsiHewan);
+
     }
 
-    private void playSound(final Context context, int audio){
+    @Override
+    public void play(Context context, int audio) {
         final int raw = audio;
+        final Context appContext = context;
         new Thread(new Runnable() {
             @Override
             public void run() {
                 MediaPlayer mediaPlayer = new MediaPlayer();
-                mediaPlayer = MediaPlayer.create(context, raw);
+                mediaPlayer = MediaPlayer.create(appContext, raw);
                 mediaPlayer.setLooping(false);
                 mediaPlayer.start();
             }
         }).start();
     }
-
 }

@@ -35,7 +35,7 @@ public class HewanActivity extends AppCompatActivity {
     ArrayList<Hewan> hewan = new ArrayList<>();
     HewanHelper hewanHelper = new HewanHelper(this);
 
-    String namaKelas= "";
+    String namaKelas = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
